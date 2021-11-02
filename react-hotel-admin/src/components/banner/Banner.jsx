@@ -3,34 +3,34 @@ import { CKEditor } from 'ckeditor4-react';
 import "./banner.css"
 
 
-export default function Banner() {
-    const [header, setHeader] = useState("");
-    const [description, setDescription] = useState("");
-    const [image, setImage] = useState("");
+export default function Banner({value, setValue}) {
 
     return (
         <div className="banner-row">
             <div className="banner-header">
+                <div>Banner Başlık</div>
                 <CKEditor
-                    initData={<p>Hello from CKEditor 4!</p>}
-                    onBlur={({ editor }) => {
-                        setHeader(editor.getData());
+                    initData={value.header}
+                    onChange={({ editor }) => {
+                        setValue(value => ({...value, header: editor.getData()}));
                     }}
                 />
             </div>
             <div className="banner-description">
+                <div>Banner İçerik</div>
                 <CKEditor
-                    initData={<p>Hello from CKEditor 4!</p>}
-                    onBlur={({ editor }) => {
-                        setDescription(editor.getData());
+                    initData={value.description}
+                    onChange={({ editor }) => {
+                        setValue(value => ({...value, description: editor.getData()}));
                     }}
                 />
             </div>
             <div className="banner-image">
+            <div>Banner Resim</div>
                 <CKEditor
-                    initData={<p>Hello from CKEditor 4!</p>}
-                    onBlur={({ editor }) => {
-                        setImage(editor.getData());
+                    initData={value.image}
+                    onChange={({ editor }) => {
+                        setValue(value => ({...value, image: editor.getData()}));
                     }}
                 />
             </div>
