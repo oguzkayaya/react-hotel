@@ -1,0 +1,19 @@
+.banner-row {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.banner-header, .banner-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.banner-image {
+    width: 100%;
+}
+
+.save-button {
+    margin-top: 2em;
+    text-align: center;
+}

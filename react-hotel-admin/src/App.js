@@ -6,7 +6,7 @@ import {
 	Link
 } from "react-router-dom";
 import "./app.css"
-import Banner from "./components/banner/Banner";
+import BannerList from "./components/banner/BannerList";
 import Sidebar from "./components/sidebar/Sidebar";
 import TopBar from "./components/topbar/Topbar";
 
@@ -20,7 +20,7 @@ function App() {
 					<div className="page-content">
 						<Switch>
 							<Route path="/banner">
-								<Banner />
+								<BannerList />
 							</Route>
 							<Route path="/analitics">
 								analitics
