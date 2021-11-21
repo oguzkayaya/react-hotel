@@ -4,9 +4,12 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const hotelsRoute = require("./routes/hotels");
+const cors = require("cors");
 
 
 dotenv.config();
+
+app.use(cors());
 
 app.use(express.json());
 app.use("/api/user", authRoute);
@@ -19,6 +22,6 @@ mongoose.connect(
     }
 )
 
-app.listen(3000, () => {
+app.listen(8080, () => {
     console.log("Server up and running");
 })
