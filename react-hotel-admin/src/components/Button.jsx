@@ -9,6 +9,7 @@ const Button = styled.button`
   padding: 1em 3em;
   cursor: pointer;
   transition: all 250ms;
+  width: 100%;
 
   &:hover {
       background: rgb(2, 134, 125);

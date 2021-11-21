@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import { ArrowLeft, Timeline, TrendingUp, ViewCarousel } from '@material-ui/icons';
+import React, { useEffect, useState } from 'react';
+import { matchPath, useLocation } from 'react-router';
 import { Link } from "react-router-dom";
-import "./sidebar.css"
-import { LineStyle, Timeline, TrendingUp, ArrowLeft, ViewCarousel } from '@material-ui/icons';
+import "./sidebar.css";
 
 export default function Sidebar() {
-    const [activeMenuItem, setActiveMenuItem] = useState("home");
     const [panelMinimize, setPanelMinimize] = useState(true);
+    const [pathname, setPathname] = useState("");
 
+    let location = useLocation();
+    useEffect(() => {
+        setPathname(location.pathname)
+    }, [location])
     return (
         <div className={`sidebar ${panelMinimize ? 'panel-minimized' : ''}`}>
             <div className="sidebarWrapper">
@@ -17,17 +22,17 @@ export default function Sidebar() {
                     <h3 className="sidebarTitle">DASHBOARD</h3>
                     <ul className="sidebarList">
                         <Link to="/banner">
-                            <li className={`sidebarListItem ${activeMenuItem === "home" ? "active" : ""}`} onClick={() => setActiveMenuItem("home")}>
+                            <li className={`sidebarListItem ${matchPath(pathname, {path: "/banner", exact: true})  ? "active" : ""}`}>
                                 <ViewCarousel /> <div className="sidebar-item-text">Banner</div>
                             </li>
                         </Link>
                         <Link to="/analitics">
-                            <li className={`sidebarListItem ${activeMenuItem === "analitics" ? "active" : ""}`} onClick={() => setActiveMenuItem("analitics")}>
+                            <li className={`sidebarListItem ${matchPath(pathname, {path: "/analitics", exact: true}) ? "active" : ""}`}>
                                 <Timeline /> <div className="sidebar-item-text">Analitics</div>
                             </li>
                         </Link>
                         <Link to="/sales">
-                            <li className={`sidebarListItem ${activeMenuItem === "sales" ? "active" : ""}`} onClick={() => setActiveMenuItem("sales")}>
+                            <li className={`sidebarListItem ${matchPath(pathname, {path: "/sales", exact: true}) ? "active" : ""}`}>
                                 <TrendingUp /> <div className="sidebar-item-text">Sales</div>
                             </li>
                         </Link>
