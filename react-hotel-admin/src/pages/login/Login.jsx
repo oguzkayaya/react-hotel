@@ -31,7 +31,7 @@ function Login({setToken}) {
     const handleModalClose = () => {
         setModalOpen(false);
         setToken(tokenResponse);
-        history.push("/");
+        history.push("/hotels");
     }
 
     return (

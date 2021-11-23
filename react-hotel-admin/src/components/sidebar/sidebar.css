@@ -1,6 +1,6 @@
 .sidebar {
     flex: 1;
-    height: calc(100vh - 50px);
+    height: 100%;
     background-color: #2f4050;
     color: #b4c2ce;
 }

@@ -25,3 +25,12 @@
     color: darkblue;
     cursor: pointer;
 }
+
+.logout-button {
+    cursor: pointer;
+}
+
+.topbar-right {
+    display: flex;
+    gap: 2rem;
+}

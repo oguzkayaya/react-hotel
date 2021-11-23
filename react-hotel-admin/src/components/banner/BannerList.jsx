@@ -5,8 +5,7 @@ import Button from "../Button";
 
 export default function BannerList() {
     const [banner, setBanner] = useState({
-        header: "Banner Header",
-        description: "Banner Desctiption",
+        text: "Banner Header",
         image: "Banner İmage",
     })
 
@@ -17,9 +16,7 @@ export default function BannerList() {
 
     return (
         <div>
-            {banner.header} , {banner.description}, {banner.image}
             <Banner value={banner} setValue={setBanner} />
-
             <div className="save-button">
                 <Button onClick={saveBanner}>KAYDET</Button>
             </div>

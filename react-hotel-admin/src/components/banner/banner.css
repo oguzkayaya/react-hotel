@@ -4,16 +4,16 @@
     flex-wrap: wrap;
 }
 
-.banner-header, .banner-description {
+.banner-text, .banner-image {
     flex: 1;
     min-width: 300px;
 }
 
-.banner-image {
-    width: 100%;
-}
-
 .save-button {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-self: center;
     margin-top: 2em;
     text-align: center;
 }
