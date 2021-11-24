@@ -2,6 +2,11 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.banner-row:last-child {
+    margin-bottom: 1rem;
 }
 
 .banner-text, .banner-image {
@@ -16,4 +21,22 @@
     justify-self: center;
     margin-top: 2em;
     text-align: center;
+}
+
+.new-banner-button {
+    max-width: 100px;
+    margin: auto;
+}
+
+.banner-header {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.banner-remove {
+    color: #ff4848;
+    cursor: pointer;
+    font-weight: bold;
 }

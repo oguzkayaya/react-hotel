@@ -2,7 +2,7 @@ import { InputLabel, OutlinedInput } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import React, { useState } from 'react';
 import "./login.css";
-import Button from "../../components/Button";
+import MyButton from "../../components/MyButton";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -50,7 +50,7 @@ function Login({setToken}) {
             </FormControl>
 
             <div className="login-button">
-                <Button onClick={login}>Login</Button>
+                <MyButton onClick={login}>Login</MyButton>
             </div>
 
             <div>
@@ -64,7 +64,7 @@ function Login({setToken}) {
                         </div>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleModalClose}>Continue</Button>
+                        <MyButton onClick={handleModalClose}>Continue</MyButton>
                     </DialogActions>
                 </Dialog>
             </div>

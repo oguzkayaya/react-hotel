@@ -3,24 +3,38 @@ import React from 'react';
 import "./banner.css";
 
 
-export default function Banner({ value, setValue }) {
+export default function Banner({ bannerValue, setBannerList }) {
     return (
         <div className="banner-row">
             <div className="banner-text">
                 <div>Banner Description</div>
                 <CKEditor
-                    initData={value.text}
+                    initData={bannerValue.text}
                     onChange={({ editor }) => {
-                        setValue(value => ({ ...value, text: editor.getData() }));
+                        setBannerList(bannerList => {
+                            return bannerList.map(banner => {
+                                if(banner._id === bannerValue._id) {
+                                    banner.text = editor.getData();
+                                }
+                                return banner;
+                            })
+                        });
                     }}
                 />
             </div>
             <div className="banner-image">
                 <div>Banner Image</div>
                 <CKEditor
-                    initData={value.image}
+                    initData={bannerValue.image}
                     onChange={({ editor }) => {
-                        setValue(value => ({ ...value, image: editor.getData() }));
+                        setBannerList(bannerList => {
+                            return bannerList.map(banner => {
+                                if(banner._id === bannerValue._id) {
+                                    banner.image = editor.getData();
+                                }
+                                return banner;
+                            })
+                        });
                     }}
                 />
             </div>

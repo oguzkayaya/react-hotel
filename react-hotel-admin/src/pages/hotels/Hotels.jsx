@@ -4,7 +4,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import FormControl from '@material-ui/core/FormControl';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import Button from "../../components/Button";
+import MyButton from "../../components/MyButton";
 import "./hotels.css";
 
 const axios = require('axios');
@@ -58,7 +58,7 @@ function Hotels({ setCurrentHotel }) {
                 ))}
             </div>
             <div className="new-hotel-button">
-                <Button onClick={() => setNewHotelOpen(true)}>New Hotel</Button>
+                <MyButton onClick={() => setNewHotelOpen(true)}>New Hotel</MyButton>
             </div>
             <div>
                 <Dialog
@@ -71,7 +71,7 @@ function Hotels({ setCurrentHotel }) {
                                 <InputLabel htmlFor="component-outlined">New Hotel Name</InputLabel>
                                 <OutlinedInput id="component-outlined" value={newHotelName} onChange={(e) => setNewHotelName(e.target.value)} label="New Hotel Name" />
                             </FormControl>
-                            <Button onClick={saveHotel}>Save</Button>
+                            <MyButton onClick={saveHotel}>Save</MyButton>
                         </div>
                     </DialogContent>
                 </Dialog>

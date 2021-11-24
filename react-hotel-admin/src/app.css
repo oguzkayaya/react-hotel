@@ -20,4 +20,5 @@ html, body {
 .page-content {
     padding: 2rem 4rem;
     flex: 5;
+    overflow: auto;
 }

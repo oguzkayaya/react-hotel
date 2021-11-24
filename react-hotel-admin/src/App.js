@@ -36,7 +36,7 @@ function App() {
 				<Route path="/">
 					{token && <div className="container">
 						<Sidebar />
-						<PageContent />
+						<PageContent currentHotel={currentHotel} />
 					</div>
 					}
 				</Route>
