@@ -1,7 +1,8 @@
+import { InputLabel, OutlinedInput } from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
 import { CKEditor } from 'ckeditor4-react';
 import React from 'react';
 import "./banner.css";
-
 
 export default function Banner({ bannerValue, setBannerList }) {
     return (
@@ -13,7 +14,7 @@ export default function Banner({ bannerValue, setBannerList }) {
                     onChange={({ editor }) => {
                         setBannerList(bannerList => {
                             return bannerList.map(banner => {
-                                if(banner._id === bannerValue._id) {
+                                if (banner._id === bannerValue._id) {
                                     banner.text = editor.getData();
                                 }
                                 return banner;
@@ -24,19 +25,21 @@ export default function Banner({ bannerValue, setBannerList }) {
             </div>
             <div className="banner-image">
                 <div>Banner Image</div>
-                <CKEditor
-                    initData={bannerValue.image}
-                    onChange={({ editor }) => {
-                        setBannerList(bannerList => {
-                            return bannerList.map(banner => {
-                                if(banner._id === bannerValue._id) {
-                                    banner.image = editor.getData();
-                                }
-                                return banner;
-                            })
-                        });
-                    }}
-                />
+                <FormControl variant="outlined" fullWidth>
+                    <OutlinedInput id="component-outlined" value={bannerValue.image} onChange={(e) => setBannerList(bannerList => {
+                        return bannerList.map(banner => {
+                            if (banner._id === bannerValue._id) {
+                                banner.image = e.target.value;
+                            }
+                            return banner;
+                        })
+                    })} />
+                </FormControl>
+                <div className="banner-preview">
+                    <img src={bannerValue.image} className="banner-img" />
+                    <div className="banner-preview-text" dangerouslySetInnerHTML={{__html: bannerValue.text}}>
+                    </div>
+                </div>
             </div>
         </div>
     )

@@ -1,12 +1,9 @@
 .banner-row {
     display: flex;
+    flex-direction: column;
     gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 4rem;
-}
-
-.banner-row:last-child {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .banner-text, .banner-image {
@@ -39,4 +36,25 @@
     color: #ff4848;
     cursor: pointer;
     font-weight: bold;
+}
+
+.banner-img {
+    width: 100%;
+    filter: brightness(0.9);
+}
+
+.banner-preview {
+    position: relative;
+    margin: auto;
+    margin-top: 0.5rem;
+    max-width: 80%;
+}
+
+.banner-preview-text {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

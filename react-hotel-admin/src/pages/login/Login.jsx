@@ -1,12 +1,12 @@
 import { InputLabel, OutlinedInput } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
-import React, { useState } from 'react';
-import "./login.css";
-import MyButton from "../../components/MyButton";
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import FormControl from '@material-ui/core/FormControl';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import MyButton from "../../components/MyButton";
+import "./login.css";
 
 const axios = require('axios');
 
